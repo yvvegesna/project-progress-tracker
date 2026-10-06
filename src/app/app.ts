@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { MilestoneTracker } from './milestone-tracker/milestone-tracker';
+import { ProgressNotes } from './progress-notes/progress-notes';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [MilestoneTracker, ProgressNotes],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('project-progress-tracker');
 }

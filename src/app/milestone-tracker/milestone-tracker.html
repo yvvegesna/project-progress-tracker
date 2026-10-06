@@ -1,0 +1,24 @@
+<h2>Milestone Tracker</h2>
+
+<form [formGroup]="milestoneForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="milestoneName">Milestone Name:</label>
+    <input id="milestoneName" type="text" formControlName="milestoneName">
+  </div>
+
+  <div>
+    <label for="dueDate">Due Date:</label>
+    <input id="dueDate" type="date" formControlName="dueDate">
+  </div>
+
+  <div>
+    <label for="status">Status:</label>
+    <select id="status" formControlName="status">
+      <option value="Not Started">Not Started</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+
+  <button type="submit">Save Milestone</button>
+</form>

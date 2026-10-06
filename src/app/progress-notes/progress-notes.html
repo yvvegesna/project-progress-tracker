@@ -1,0 +1,39 @@
+<h2>Progress Notes</h2>
+
+<form [formGroup]="progressNotesForm">
+
+  <div>
+    <label for="projectName">Project Name:</label>
+    <input id="projectName" type="text" formControlName="projectName">
+  </div>
+
+  <div>
+    <label for="date">Date:</label>
+    <input id="date" type="date" formControlName="date">
+  </div>
+
+  <div>
+    <label for="currentStatus">Current Status:</label>
+    <select id="currentStatus" formControlName="currentStatus">
+      <option value="On Track">On Track</option>
+      <option value="Needs Attention">Needs Attention</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="teamMember">Team Member:</label>
+    <input id="teamMember" type="text" formControlName="teamMember">
+  </div>
+
+  <div>
+    <label for="progressNote">Progress Note:</label>
+    <textarea
+  id="progressNote"
+  formControlName="progressNote"
+  rows="3"
+  cols="55">
+</textarea>
+  </div>
+
+</form>
