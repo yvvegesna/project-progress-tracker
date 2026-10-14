@@ -1,7 +1,17 @@
 <h2>Progress Notes</h2>
 
 <form [formGroup]="progressNotesForm">
+  
+ <div>
+  <label for="projectCode">Project Code:</label>
+  <input id="projectCode" type="text"
+         formControlName="projectCode"
+         (blur)="onProjectCodeChange()">
+ </div>
 
+@if (invalidProjectCode) {
+  <p style="color: red;">Project code not found.</p>
+}
   <div>
     <label for="projectName">Project Name:</label>
     <input id="projectName" type="text" formControlName="projectName">
