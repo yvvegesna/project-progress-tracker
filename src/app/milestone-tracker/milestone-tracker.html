@@ -1,26 +1,47 @@
+
 <h2>Milestone Tracker</h2>
 
 <form [formGroup]="milestoneForm" (ngSubmit)="onSubmit()">
+
   <div>
-    <label for="milestoneName">Milestone Name:</label>
-    <input id="milestoneName" type="text" formControlName="milestoneName">
+    <mat-form-field appearance="outline">
+      <mat-label>Milestone Name</mat-label>
+      <input
+        matInput
+        id="milestoneName"
+        type="text"
+        formControlName="milestoneName"
+      >
+    </mat-form-field>
   </div>
 
   <div>
-    <label for="dueDate">Due Date:</label>
-    <input id="dueDate" type="date" formControlName="dueDate">
+    <mat-form-field appearance="outline">
+      <mat-label>Due Date</mat-label>
+      <input
+        matInput
+        id="dueDate"
+        type="date"
+        formControlName="dueDate"
+      >
+    </mat-form-field>
   </div>
 
   <div>
-    <label for="status">Status:</label>
-    <select id="status" formControlName="status">
-      <option value="Not Started">Not Started</option>
-      <option value="In Progress">In Progress</option>
-      <option value="Completed">Completed</option>
-    </select>
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select id="status" formControlName="status">
+        <mat-option value="Not Started">Not Started</mat-option>
+        <mat-option value="In Progress">In Progress</mat-option>
+        <mat-option value="Completed">Completed</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
-  <button type="submit">Save Milestone</button>
+  <button mat-raised-button type="submit">
+    Save Milestone
+  </button>
+
 </form>
 
 <hr>
