@@ -22,3 +22,20 @@
 
   <button type="submit">Save Milestone</button>
 </form>
+
+<hr>
+
+<h3>Milestones Retrieved from Express Server</h3>
+
+@if (milestones.length > 0) {
+  <ul>
+    @for (milestone of milestones; track milestone.id) {
+      <li>
+        <strong>{{ milestone.name }}</strong>
+        - Status: {{ milestone.status }}
+      </li>
+    }
+  </ul>
+} @else {
+  <p>No milestones available.</p>
+}
