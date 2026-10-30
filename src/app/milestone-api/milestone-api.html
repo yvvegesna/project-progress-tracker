@@ -1,0 +1,52 @@
+
+<h2>Milestone API – Angular and Express Communication</h2>
+
+<h3>Submit a New Milestone</h3>
+
+<form [formGroup]="milestoneForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Milestone Name</mat-label>
+    <input matInput formControlName="milestoneName">
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option value="Not Started">Not Started</mat-option>
+      <mat-option value="In Progress">In Progress</mat-option>
+      <mat-option value="Completed">Completed</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <button mat-raised-button type="submit">
+    Save Milestone
+  </button>
+
+</form>
+
+@if (message) {
+  <p class="success-message">{{ message }}</p>
+}
+
+<hr>
+
+<h3>Milestones Retrieved from Express Server</h3>
+
+@if (milestones.length > 0) {
+  <ul>
+    @for (milestone of milestones; track milestone.id) {
+      <li>
+        <strong>{{ milestone.name }}</strong>
+        - Status: {{ milestone.status }}
+      </li>
+    }
+  </ul>
+} @else {
+  <p>No milestones available.</p>
+}
+
